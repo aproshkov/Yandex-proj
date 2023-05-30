@@ -1,0 +1,26 @@
+.OneElementContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 580px;
+    background-color: #1C1C21;
+    border-radius: 40px;
+    margin: 10px 0;
+}
+
+.IngridientCard {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.infoBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 150px;
+}
+
+.text {
+    width: 150px;
+    text-align: center;
+}

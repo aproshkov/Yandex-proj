@@ -1,0 +1,24 @@
+.BurgerConstructorContainer {
+    width: 50%;
+    margin-top: 80px;
+}
+.IngridientsTable {
+    width: 70%;
+    height: 50vh;
+    overflow-y: scroll;
+}
+
+.topBurgerIngridient {
+    width: 70%;
+ }
+ .saleItog {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 70%;
+    margin: 10px;
+ }
+ .cost,
+ .costIcon {
+    margin-right: 10px;
+ }

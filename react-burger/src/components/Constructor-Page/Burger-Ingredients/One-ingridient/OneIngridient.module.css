@@ -1,0 +1,13 @@
+.OneIngridientContainer {
+    width: 272px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ingrisientPriceContainer {
+    display: flex;
+    align-items: center ;
+}
+.ingrisientPrice {
+    margin-right: 10px;
+}
