@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
 import OneIngridient from './One-ingridient/OneIngridient';
-import data from '../../../utils/data';
 import style from './BurgerIngredients.module.css';
 
 export default function BurgerIngredients() {
   const [current, setCurrent] = useState('one');
+  const urlAdress = 'https://norma.nomoreparties.space/api/ingredients'
+  const [data, setData] = useState([]);
+  useEffect(()=> {
+    fetch(urlAdress)
+    .then((response) => response.json())
+    .then((response) => setData(response.data))
+    .catch((e) => console.log(e));
+  },[])
+
   return (
     <div className={style.BurgerIngredientsContainer}>
       <h1>Соберите бургер</h1>

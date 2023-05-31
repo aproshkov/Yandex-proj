@@ -3,13 +3,15 @@
     margin-top: 80px;
 }
 .IngridientsTable {
-    width: 70%;
-    height: 50vh;
+    width: 60%;
+    height: 55vh;
     overflow-y: scroll;
 }
 
 .topBurgerIngridient {
-    width: 70%;
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
  }
  .saleItog {
     display: flex;
