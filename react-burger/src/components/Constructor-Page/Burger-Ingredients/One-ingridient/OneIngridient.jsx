@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { CurrencyIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 import style from './OneIngridient.module.css';
 import Modal from '../../Modal-Burger/Modal';
+import IngredientDetails from '../Ingredient-Details/IngredientDetails'
 
 export default function OneIngridient({ el }) {
   const [isOpenModal,setIsOpenModal] = useState(false)
@@ -19,11 +20,11 @@ export default function OneIngridient({ el }) {
       </div>
       {el.name}
     </div>
-    {isOpenModal ? (<Modal el={el} isOpenModal={isOpenModal} aboutIngridient={aboutIngridient}/>) : (null)}
+    {isOpenModal ? (<Modal isOpenModal={isOpenModal} aboutIngridient={aboutIngridient} children={<IngredientDetails el={el} />}/>) : (null)}
     </>
   );
 }
 
 OneIngridient.propTypes = {
-  el: PropTypes.array.isRequired,
+  el: PropTypes.object.isRequired,
 }

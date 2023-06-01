@@ -1,19 +1,11 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
 import OneIngridient from './One-ingridient/OneIngridient';
 import style from './BurgerIngredients.module.css';
+import PropTypes from 'prop-types';
 
-export default function BurgerIngredients() {
+export default function BurgerIngredients({data}) {
   const [current, setCurrent] = useState('one');
-  const urlAdress = 'https://norma.nomoreparties.space/api/ingredients'
-  const [data, setData] = useState([]);
-  useEffect(()=> {
-    fetch(urlAdress)
-    .then((response) => response.json())
-    .then((response) => setData(response.data))
-    .catch((e) => console.log(e));
-  },[])
-
   return (
     <div className={style.BurgerIngredientsContainer}>
       <h1>Соберите бургер</h1>
@@ -34,7 +26,7 @@ export default function BurgerIngredients() {
         <div className={style.BurgerIngredientsBun}>
           {data.map((ingridient) => {
             if (ingridient.type === 'bun') {
-              return <OneIngridient key={ingridient.id} el={ingridient} />;
+              return <OneIngridient key={ingridient._id} el={ingridient} />;
             }
             return null;
           })}
@@ -45,7 +37,7 @@ export default function BurgerIngredients() {
         <div className={style.BurgerIngredientsSauce}>
           {data.map((ingridient) => {
             if (ingridient.type === 'sauce') {
-              return <OneIngridient key={ingridient.id} el={ingridient} />;
+              return <OneIngridient key={ingridient._id} el={ingridient} />;
             }
             return null;
           })}
@@ -56,7 +48,7 @@ export default function BurgerIngredients() {
         <div className={style.BurgerIngredientsMain}>
           {data.map((ingridient) => {
             if (ingridient.type === 'main') {
-              return <OneIngridient key={ingridient.id} el={ingridient} />;
+              return <OneIngridient key={ingridient._id} el={ingridient} />;
             }
             return null;
           })}
@@ -65,4 +57,8 @@ export default function BurgerIngredients() {
     </div>
     </div>
   );
+}
+
+OneIngridient.propTypes = {
+  data: PropTypes.array,
 }

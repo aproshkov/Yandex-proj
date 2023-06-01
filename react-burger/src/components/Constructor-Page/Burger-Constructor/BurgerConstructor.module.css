@@ -6,6 +6,14 @@
     width: 60%;
     height: 55vh;
     overflow-y: scroll;
+
+}
+.IngridientsTable::-webkit-scrollbar {
+    width: 8px;
+    background-color: #2F2F37;
+}
+.IngridientsTable::-webkit-scrollbar-thumb {
+    background-color: #8585AD;
 }
 
 .topBurgerIngridient {

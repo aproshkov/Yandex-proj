@@ -18,3 +18,10 @@
     overflow-y:scroll;
     width: 70%;
 }
+.TableIngridients::-webkit-scrollbar {
+    width: 8px;
+    background-color: #2F2F37;
+}
+.TableIngridients::-webkit-scrollbar-thumb {
+    background-color: #8585AD;
+}

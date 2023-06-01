@@ -6,28 +6,28 @@ import style from './AppHeader.module.css';
 
 export default function AppHeader() {
   return (
-    <header className={style.headerContainer}>
-      <nav className={style.menuContainer} id={style.constructor}>
+    <nav className={style.headerContainer}>
+      <a href='#' className={style.menuContainer} id={style.constructor}>
         <BurgerIcon type="primary" />
-        <Button htmlType="button" type="secondary" size="small">
+        <Button htmlType="button" type="secondary" size="small" id={style.buttons}>
           Конструктор
         </Button>
-      </nav>
-      <nav className={style.menuContainer} id={style.salesBand}>
+      </a>
+      <a href='#' className={style.menuContainer} id={style.salesBand}>
         <ListIcon type="primary" />
-        <Button htmlType="button" type="secondary" size="small">
+        <Button htmlType="button" type="secondary" size="small" id={style.buttons}>
           Лента заказов
         </Button>
-      </nav>
+      </a>
       <span>
         <Logo />
       </span>
-      <nav className={style.menuContainer} id={style.private}>
+      <a href='#' className={style.menuContainer} id={style.private}>
         <ProfileIcon type="primary" />
-        <Button htmlType="button" type="secondary" size="small">
+        <Button htmlType="button" type="secondary" size="small" id={style.buttons}>
           Личный кабинет
         </Button>
-      </nav>
-    </header>
+      </a>
+    </nav>
   );
 }

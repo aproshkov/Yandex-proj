@@ -6,9 +6,7 @@ import PropTypes from 'prop-types';
 export default function BurgerConstructorOneItem({el}) {
   return (
     <div className={style.IngridientCard}>
-      {el.name === 'Краторная булка N-200i' ? (
-        null
-      ) : (<DragIcon type="primary" />)}
+      <DragIcon type="primary" />
         <ConstructorElement
         text={el.name}
         price={el.price}
