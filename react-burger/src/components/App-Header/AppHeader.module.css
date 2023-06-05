@@ -1,0 +1,28 @@
+.headerContainer {
+    display: flex ;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #1C1C21;
+    height: 88px;
+}
+.menuContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+#constructor {
+    width: 178px;
+    height: 56px;
+}
+#salesBand {
+    width: 197px;
+    height: 56px;
+}
+#private {
+    width: 207px;
+    height: 56px;
+}
+#buttons {
+    padding-left: 10px;
+}

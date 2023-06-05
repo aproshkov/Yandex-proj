@@ -1,0 +1,34 @@
+.BurgerConstructorContainer {
+    width: 50%;
+    margin-top: 80px;
+}
+.IngridientsTable {
+    width: 60%;
+    height: 55vh;
+    overflow-y: scroll;
+
+}
+.IngridientsTable::-webkit-scrollbar {
+    width: 8px;
+    background-color: #2F2F37;
+}
+.IngridientsTable::-webkit-scrollbar-thumb {
+    background-color: #8585AD;
+}
+
+.topBurgerIngridient {
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+ }
+ .saleItog {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 70%;
+    margin: 10px;
+ }
+ .cost,
+ .costIcon {
+    margin-right: 10px;
+ }
