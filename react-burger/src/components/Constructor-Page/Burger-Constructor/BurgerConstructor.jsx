@@ -1,16 +1,14 @@
-import React,{useEffect, useState} from 'react';
+import React,{ useState} from 'react';
 import style from './BurgerConstructor.module.css'
 import BurgerConstructorOneItem from './Burger-Constructor-One-Item/BurgerConstructorOneItem';
 import {CurrencyIcon,Button,ConstructorElement} from '@ya.praktikum/react-developer-burger-ui-components'
 import Modal from '../Modal-Burger/Modal'
 import OrderDetails from './Order-Details/OrderDetails';
-import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux'
 import {useDrop} from 'react-dnd'
 import {setBunIngridient, setIngridientsConstructor} from '../../../services/slices/ingridientsConstructorSlice'
 
 export default function BurgerConstructor() {
-  // const burgerBase = 'Краторная булка N-200i'
   const dispatch = useDispatch()
   const allIngridients = useSelector(store => store.allIngridients)
   const ingridientsConstructor = useSelector(store => store.ingridientsConstructor)
@@ -18,7 +16,7 @@ export default function BurgerConstructor() {
   const modalOnSale = () => {
     setModal(prevModal => !prevModal)
   }
-  // const withthoutBulk = allIngridients.filter((el) => el.name !== burgerBase)
+
   const [burgerBaseOpen , setBurgerBaseOpen] = useState (false)
   const [burgerBase , setBurgerBase] = useState ('')
   const [,dropRef] = useDrop({
@@ -46,7 +44,7 @@ export default function BurgerConstructor() {
               </div>
       ) : null }
       <div className={style.IngridientsTable} ref={dropRef}>
-      {ingridientsConstructor.map((ingridient,index)=> ingridient.type === 'bun' ? null : <BurgerConstructorOneItem key={ingridient._id + 1} el={ingridient} /> )}
+      {ingridientsConstructor.map((ingridient,index)=> ingridient.type === 'bun' ? null : <BurgerConstructorOneItem key={ingridient._id + 1} el={ingridient} index={index} /> )}
       </div>
       {burgerBaseOpen ? (
               <div className={style.topBurgerIngridient}>
@@ -66,7 +64,3 @@ export default function BurgerConstructor() {
     </>
   );
 }
-
-// BurgerConstructor.propTypes = {
-//   data: PropTypes.array.isRequired,
-// }

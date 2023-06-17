@@ -21,9 +21,19 @@ const ingridientsConstructorSlice = createSlice ({
               state.splice(index, 1);
             }
           },
+        setPosIngridient: (state,action) => {
+            
+            state.splice(
+                action.payload.currentIndex,
+                0,
+                state.splice(action.payload.hoverIndex,1)[0]
+            )
+
+
+        }
       
     }
 })
 
-export const {setIngridientsConstructor,deleteIngridientConstructor,setBunIngridient} = ingridientsConstructorSlice.actions
+export const {setIngridientsConstructor,deleteIngridientConstructor,setBunIngridient,setPosIngridient} = ingridientsConstructorSlice.actions
 export default ingridientsConstructorSlice.reducer
