@@ -6,6 +6,7 @@ import Modal from '../../Modal-Burger/Modal';
 import IngredientDetails from '../Ingredient-Details/IngredientDetails'
 import { useDispatch } from 'react-redux'
 import { setCurrentIngridient } from '../../../../services/slices/currentIngridientSlice';
+import {useDrag} from 'react-dnd/dist/hooks'
 
 export default function OneIngridient({ el }) {
   const [isOpenModal,setIsOpenModal] = useState(false)
@@ -14,9 +15,10 @@ export default function OneIngridient({ el }) {
     setIsOpenModal(previsOpenModal => !previsOpenModal)
     dispatch(setCurrentIngridient(el))
   }
+  const [,ingDragRef] = useDrag({ type:'ingridient',item: el })
   return (
     <>
-    <div className={style.OneIngridientContainer} onClick={aboutIngridient} >
+    <div className={style.OneIngridientContainer} onClick={aboutIngridient} draggable ref={ingDragRef}>
       <img src={el.image} alt="" />
       <div className={style.ingrisientPriceContainer}>
         <p className={style.ingrisientPrice}>{el.price}</p>
