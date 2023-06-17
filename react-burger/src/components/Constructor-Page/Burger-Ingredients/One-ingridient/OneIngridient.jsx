@@ -4,11 +4,15 @@ import { CurrencyIcon } from '@ya.praktikum/react-developer-burger-ui-components
 import style from './OneIngridient.module.css';
 import Modal from '../../Modal-Burger/Modal';
 import IngredientDetails from '../Ingredient-Details/IngredientDetails'
+import { useDispatch } from 'react-redux'
+import { setCurrentIngridient } from '../../../../services/slices/currentIngridientSlice';
 
 export default function OneIngridient({ el }) {
   const [isOpenModal,setIsOpenModal] = useState(false)
+  const dispatch = useDispatch()
   const aboutIngridient = () => {
     setIsOpenModal(previsOpenModal => !previsOpenModal)
+    dispatch(setCurrentIngridient(el))
   }
   return (
     <>
@@ -20,7 +24,7 @@ export default function OneIngridient({ el }) {
       </div>
       {el.name}
     </div>
-    {isOpenModal ? (<Modal isOpenModal={isOpenModal} aboutIngridient={aboutIngridient} children={<IngredientDetails el={el} />}/>) : (null)}
+    {isOpenModal ? (<Modal isOpenModal={isOpenModal} aboutIngridient={aboutIngridient} children={<IngredientDetails/>}/>) : (null)}
     </>
   );
 }

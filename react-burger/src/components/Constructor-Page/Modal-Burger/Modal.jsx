@@ -3,14 +3,18 @@ import style  from './Modal.module.css'
 import ModalOverlay from './ModalOverlay'
 import {CloseIcon} from '@ya.praktikum/react-developer-burger-ui-components'
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux'
+import { setEmptyIngridient } from '../../../services/slices/currentIngridientSlice';
 
 export default function Modal({modal,modalOnSale,isOpenModal,aboutIngridient,children}) {
+  const dispatch = useDispatch()
   const escapeKey = 27
   const escInfoHandler = () => {
         document.onkeydown = function(evt) {
           evt = evt || window.event;
           if (evt.keyCode === escapeKey && isOpenModal) {
             aboutIngridient();
+            dispatch(setEmptyIngridient())
           }
           if (evt.keyCode === escapeKey && modal) {
             modalOnSale();
@@ -21,7 +25,10 @@ export default function Modal({modal,modalOnSale,isOpenModal,aboutIngridient,chi
     escInfoHandler()
   })
   const onCloseModal = () => {
-    if (isOpenModal) aboutIngridient()
+    if (isOpenModal) {
+      aboutIngridient()
+      dispatch(setEmptyIngridient())
+    }
     if (modal) modalOnSale()
   }
   return (
