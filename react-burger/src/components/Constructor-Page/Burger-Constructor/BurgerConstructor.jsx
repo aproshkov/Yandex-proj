@@ -7,6 +7,7 @@ import OrderDetails from './Order-Details/Order-details';
 import { useSelector, useDispatch } from 'react-redux'
 import {useDrop} from 'react-dnd'
 import {setBunIngridient, setIngridientsConstructor} from '../../../services/slices/ingridientsConstructorSlice'
+import { v4 as uuidv4 } from 'uuid'
 
 export default function BurgerConstructor() {
   const dispatch = useDispatch()
@@ -19,20 +20,21 @@ export default function BurgerConstructor() {
 
   const [burgerBaseOpen , setBurgerBaseOpen] = useState (false)
   const [burgerBase , setBurgerBase] = useState ('')
+  const uuid = uuidv4();
   const [,dropRef] = useDrop({
     accept: 'ingridient',
     drop(item) {
       if(item.type === 'bun' && !burgerBaseOpen) {
-        dispatch(setIngridientsConstructor(item))
-        dispatch(setIngridientsConstructor(item))
+        dispatch(setIngridientsConstructor({item,uuid}))
+        dispatch(setIngridientsConstructor({item,uuid}))
         setBurgerBaseOpen(true)
         setBurgerBase(item.name)
       }
       if(item.type === 'bun' && burgerBaseOpen) {
-        dispatch(setBunIngridient(item))
+        dispatch(setBunIngridient({item,uuid}))
         setBurgerBase(item.name)
       }
-      if (item.type !== 'bun')dispatch(setIngridientsConstructor(item))
+      if (item.type !== 'bun')dispatch(setIngridientsConstructor({item,uuid}))
     }
   })
   return (
