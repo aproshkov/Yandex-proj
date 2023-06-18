@@ -28,6 +28,7 @@ const ingridientsConstructorSlice = createSlice ({
                 0,
                 state.splice(action.payload.hoverIndex,1)[0]
             )
+
             // const element = state.find((item,index) => index === action.payload.currentIndex);
             // state.splice(action.payload.currentIndex,1);
             // for (let i = 0 ; i < state.length; i++) {
@@ -37,8 +38,11 @@ const ingridientsConstructorSlice = createSlice ({
             //   if (index === action.payload.hoverIndex) return element
             //   return el
             // })
+
+          // const item = state.splice(action.payload.currentIndex, 1);
+          // state.splice((action.payload.hoverIndex > 0)? action.payload.hoverIndex-1: 0, 0, item[0])
+          // return state;
         }
-      
     }
 })
 
