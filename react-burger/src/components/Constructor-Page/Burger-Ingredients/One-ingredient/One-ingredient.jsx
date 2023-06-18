@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { CurrencyIcon } from '@ya.praktikum/react-developer-burger-ui-components';
-import style from './OneIngridient.module.css';
+import style from './OneIngredient.module.css';
 import Modal from '../../Modal-Burger/Modal';
-import IngredientDetails from '../Ingredient-Details/IngredientDetails'
+import IngredientDetails from '../Ingredient-Details/Ingredient-details'
 import { useDispatch,useSelector } from 'react-redux'
 import { setCurrentIngridient } from '../../../../services/slices/currentIngridientSlice';
 import {useDrag} from 'react-dnd/dist/hooks'

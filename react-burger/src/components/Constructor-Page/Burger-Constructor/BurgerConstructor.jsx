@@ -1,9 +1,9 @@
 import React,{ useState} from 'react';
 import style from './BurgerConstructor.module.css'
-import BurgerConstructorOneItem from './Burger-Constructor-One-Item/BurgerConstructorOneItem';
+import BurgerConstructorOneItem from './Burger-Constructor-One-Item/Burger-constructor-one-item';
 import {CurrencyIcon,Button,ConstructorElement} from '@ya.praktikum/react-developer-burger-ui-components'
 import Modal from '../Modal-Burger/Modal'
-import OrderDetails from './Order-Details/OrderDetails';
+import OrderDetails from './Order-Details/Order-details';
 import { useSelector, useDispatch } from 'react-redux'
 import {useDrop} from 'react-dnd'
 import {setBunIngridient, setIngridientsConstructor} from '../../../services/slices/ingridientsConstructorSlice'

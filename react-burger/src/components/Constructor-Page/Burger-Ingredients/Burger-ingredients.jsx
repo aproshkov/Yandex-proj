@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
-import OneIngridient from './One-ingridient/OneIngridient';
+import OneIngridient from './One-ingredient/One-ingredient';
 import style from './BurgerIngredients.module.css';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux'

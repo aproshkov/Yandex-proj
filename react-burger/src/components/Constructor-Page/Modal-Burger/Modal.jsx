@@ -1,6 +1,6 @@
 import React,{useEffect} from 'react'
 import style  from './Modal.module.css'
-import ModalOverlay from './ModalOverlay'
+import ModalOverlay from './Modal-overlay'
 import {CloseIcon} from '@ya.praktikum/react-developer-burger-ui-components'
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux'
