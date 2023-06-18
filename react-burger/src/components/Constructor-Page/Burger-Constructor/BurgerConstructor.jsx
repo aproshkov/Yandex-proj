@@ -24,6 +24,7 @@ export default function BurgerConstructor() {
     drop(item) {
       if(item.type === 'bun' && !burgerBaseOpen) {
         dispatch(setIngridientsConstructor(item))
+        dispatch(setIngridientsConstructor(item))
         setBurgerBaseOpen(true)
         setBurgerBase(item.name)
       }
@@ -42,9 +43,9 @@ export default function BurgerConstructor() {
               <div className={style.topBurgerIngridient}>
               {allIngridients.map((el) => el.name === burgerBase ? (<ConstructorElement key={el._id} type="top" isLocked={true} text={el.name} price={el.price} thumbnail={el.image}/>): null)}
               </div>
-      ) : null }
+      ) : <h3>Сперва перенесите булку</h3> }
       <div className={style.IngridientsTable} ref={dropRef}>
-      {ingridientsConstructor.map((ingridient,index)=> ingridient.type === 'bun' ? null : <BurgerConstructorOneItem key={ingridient._id + 1} el={ingridient} index={index} /> )}
+      {ingridientsConstructor.map((ingridient,index)=> ingridient.type === 'bun' ? null : <BurgerConstructorOneItem key={ingridient._id + index} el={ingridient} index={index} /> )}
       </div>
       {burgerBaseOpen ? (
               <div className={style.topBurgerIngridient}>

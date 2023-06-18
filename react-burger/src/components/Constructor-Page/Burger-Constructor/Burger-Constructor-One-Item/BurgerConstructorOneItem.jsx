@@ -41,7 +41,7 @@ export default function BurgerConstructorOneItem({el,index}) {
   const [, dragRef] = useDrag({
     type: "ingredientList",
     item: () => {
-      return { index };
+      return { ...el._id,index };
     },
   });
  
