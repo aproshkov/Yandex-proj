@@ -45,15 +45,15 @@ export default function BurgerConstructor() {
     <div className={style.BurgerConstructorContainer}>
       {burgerBaseOpen ? (
               <div className={style.topBurgerIngridient}>
-              {allIngridients.map((el) => el.name === burgerBase ? (<ConstructorElement key={el._id} type="top" isLocked={true} text={el.name} price={el.price} thumbnail={el.image}/>): null)}
+              {allIngridients.map((el) => el.name === burgerBase ? (<ConstructorElement key={el._id + 1} type="top" isLocked={true} text={el.name} price={el.price} thumbnail={el.image}/>): null)}
               </div>
       ) : <h3>Сперва перенесите булку</h3> }
       <div className={style.IngridientsTable} ref={dropRef}>
-      {ingridientsConstructor.map((ingridient,index)=> ingridient.type === 'bun' ? null : <BurgerConstructorOneItem key={ingridient._id + index} el={ingridient} index={index} /> )}
+      {ingridientsConstructor.map((ingridient,index)=> ingridient.type === 'bun' ? null : <BurgerConstructorOneItem key={ingridient.uuid} el={ingridient} index={index} /> )}
       </div>
       {burgerBaseOpen ? (
               <div className={style.topBurgerIngridient}>
-              {allIngridients.map((el) => el.name === burgerBase ? (<ConstructorElement key={el._id + 1} type="bottom" isLocked={true} text={el.name} price={el.price} thumbnail={el.image}/>): null)}
+              {allIngridients.map((el) => el.name === burgerBase ? (<ConstructorElement key={el._id + 2} type="bottom" isLocked={true} text={el.name} price={el.price} thumbnail={el.image}/>): null)}
               </div>
       ) : null }
       <div className={style.saleItog}>
