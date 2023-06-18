@@ -40,6 +40,7 @@ const postData = (ingredients) => {
   };
 
 export const pushOrder = (itemsConsctructor) => (dispatch) => {
+    dispatch(setOrderNumber())
     fetch(UrlAdress, postData(itemsConsctructor))
     .then((res) => {
         if (res.ok) {
@@ -54,5 +55,5 @@ export const pushOrder = (itemsConsctructor) => (dispatch) => {
       });
 }
 
-export const {setOrder,setOrderNumberSucses,setOrderNumberFailed} = orderSlice.actions
+export const {setOrderNumber,setOrderNumberSucses,setOrderNumberFailed} = orderSlice.actions
 export default orderSlice.reducer
