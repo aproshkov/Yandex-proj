@@ -12,7 +12,7 @@ const allIngridientsSlice = createSlice ({
     }
 })
 
- export const {setAllIngridients} = allIngridientsSlice.actions
+ export const { setAllIngridients } = allIngridientsSlice.actions
  export default allIngridientsSlice.reducer
 
 export const getIngridients = () => (dispatch) => {

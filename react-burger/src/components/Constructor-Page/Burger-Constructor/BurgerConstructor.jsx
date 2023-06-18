@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import {useDrop} from 'react-dnd'
 import {setBunIngridient, setIngridientsConstructor} from '../../../services/slices/ingridientsConstructorSlice'
 import { v4 as uuidv4 } from 'uuid'
+import { pushOrder } from '../../../services/slices/orderSlice';
 
 export default function BurgerConstructor() {
   const dispatch = useDispatch()
@@ -16,6 +17,7 @@ export default function BurgerConstructor() {
   const [modal,setModal] = useState(false)
   const modalOnSale = () => {
     setModal(prevModal => !prevModal)
+    dispatch(pushOrder(ingridientsConstructor.map((el) => el._id)))
   }
 
   const [burgerBaseOpen , setBurgerBaseOpen] = useState (false)
