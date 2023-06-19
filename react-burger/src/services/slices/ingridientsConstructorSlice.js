@@ -21,27 +21,12 @@ const ingridientsConstructorSlice = createSlice ({
               state.splice(index, 1);
             }
           },
-        setPosIngridient: (state,action) => {
-            
+        setPosIngridient: (state,action) => { 
             state.splice(
-                action.payload.currentIndex,
+                action.payload.dragIndex,
                 0,
                 state.splice(action.payload.hoverIndex,1)[0]
             )
-
-            // const element = state.find((item,index) => index === action.payload.currentIndex);
-            // state.splice(action.payload.currentIndex,1);
-            // for (let i = 0 ; i < state.length; i++) {
-            //   if (i === action.payload.hoverIndex) state.push(element)
-            // }
-            // state.forEach((el,index) => {
-            //   if (index === action.payload.hoverIndex) return element
-            //   return el
-            // })
-
-          // const item = state.splice(action.payload.currentIndex, 1);
-          // state.splice((action.payload.hoverIndex > 0)? action.payload.hoverIndex-1: 0, 0, item[0])
-          // return state;
         }
     }
 })

@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
 import OneIngridient from './One-ingredient/One-ingredient';
 import style from './BurgerIngredients.module.css';
-import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux'
 import { getIngridients } from '../../../services/slices/allIngridientsSlice';
 
@@ -58,8 +57,8 @@ export default function BurgerIngredients() {
       </div>
       <div className={style.TableIngridients} style={{}} ref={containerRef} onScroll={scrollHandling} >
       <div className={style.BurgerIngredientsBunContainer}>
-        <h2 ref={bunsRef}>Булки</h2>
-        <div className={style.BurgerIngredientsBun}>
+        <h2 >Булки</h2>
+        <div className={style.BurgerIngredientsBun} ref={bunsRef}>
           {allIngridients.map((ingridient) => {
             if (ingridient.type === 'bun') {
               return <OneIngridient key={ingridient._id} el={ingridient} />;
@@ -69,8 +68,8 @@ export default function BurgerIngredients() {
         </div>
       </div>
       <div className={style.BurgerIngredientsSauceContainer}>
-        <h2 ref={saucesRef}>Соусы</h2>
-        <div className={style.BurgerIngredientsSauce} >
+        <h2 >Соусы</h2>
+        <div className={style.BurgerIngredientsSauce} ref={saucesRef}>
           {allIngridients.map((ingridient) => {
             if (ingridient.type === 'sauce') {
               return <OneIngridient key={ingridient._id} el={ingridient} />;
@@ -80,8 +79,8 @@ export default function BurgerIngredients() {
         </div>
       </div>
       <div className={style.BurgerIngredientsMainContainer}>
-        <h2 ref={fillingsRef}>Начинки</h2>
-        <div className={style.BurgerIngredientsMain}>
+        <h2 >Начинки</h2>
+        <div className={style.BurgerIngredientsMain} ref={fillingsRef}>
           {allIngridients.map((ingridient) => {
             if (ingridient.type === 'main') {
               return <OneIngridient key={ingridient._id} el={ingridient} />;
@@ -93,8 +92,4 @@ export default function BurgerIngredients() {
     </div>
     </div>
   );
-}
-
-OneIngridient.propTypes = {
-  data: PropTypes.array,
 }
