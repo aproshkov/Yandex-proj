@@ -1,0 +1,34 @@
+.OneIngridientContainer {
+    width: 272px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 10px;
+}
+.ingrisientPriceContainer {
+    display: flex;
+    align-items: center ;
+}
+.ingrisientPrice {
+    margin-right: 10px;
+}
+.Counter {
+    font-family: 'Iceland';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 24px;
+    text-align: center;
+    color: #F2F2F3;
+    margin: auto;
+}
+.CounterContainer {
+    display: flex;
+    background: #4C4CFF;
+    border-radius: 16px;
+    font-size: 28px;
+    min-width: 16px;
+    height: 32px;
+    padding: 0 8px;
+    position: relative;
+    left: 50px;
+}
